@@ -1,0 +1,19 @@
+   void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        gameOverText.gameObject.SetActive(false);
+    }
+    
+     void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the collision is with a specific object
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            gameOverText.gameObject.SetActive(true); 
+            
+            // Stop the game
+            Time.timeScale = 0;
+        }
+
+    }
+    
