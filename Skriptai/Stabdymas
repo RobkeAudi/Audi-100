@@ -1,0 +1,19 @@
+void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            isBraking = true;
+        }
+        else
+        {
+            isBraking = false;
+        }
+    }
+    
+    private void FixedUpdate()
+    {
+        if (isBraking)
+        {
+            rb.AddForce(-rb.velocity * brakeForce);
+        }
+    }
